@@ -1,0 +1,1584 @@
+openapi: 3.0.3
+info:
+  title: CherryTree API
+  description: An API created by decompiling the CherryTree Android App
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+  - url: https://cherrytree.soyab.uk
+tags:
+  - name: CherryTree API
+    x-page-title: CherryTree API
+    x-page-description: Public endpoints for CherryTree data
+    x-page-icon: tree
+paths:
+  /alchemy:
+    get:
+      summary: Alchemy
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Alchemy" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /basecamp:
+    get:
+      summary: Basecamp
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Basecamp" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /blessed:
+    get:
+      summary: Blessed
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Blessed" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /cooking:
+    get:
+      summary: Cooking
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Cooking" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /crafting:
+    get:
+      summary: Crafting
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Crafting" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /discovery:
+    get:
+      summary: Discovery
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Discovery" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /event:
+    get:
+      summary: Event
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Event" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /exploration:
+    get:
+      summary: Exploration
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Exploration" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /farming:
+    get:
+      summary: Farming
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Farming" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /fishing:
+    get:
+      summary: Fishing
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Fishing" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /fletching:
+    get:
+      summary: Fletching
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Fletching" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /forestry:
+    get:
+      summary: Forestry
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Forestry" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /goldmarket:
+    get:
+      summary: Gold Market
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/GoldMarket" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /items:
+    get:
+      summary: Items
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Items" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /limited:
+    get:
+      summary: Limited Trade
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Limited" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /mining:
+    get:
+      summary: Mining
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Mining" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /monsters:
+    get:
+      summary: monsters
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Monsters" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /quests:
+    get:
+      summary: Quests
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Quests" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /safes:
+    get:
+      summary: Safecracking
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Safecracking" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /secretrares:
+    get:
+      summary: Secret Rares
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/SecretRares" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /silvertrader:
+    get:
+      summary: Silver Trader
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/SilverTrader" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /theiving:
+    get:
+      summary: Theiving
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Theiving" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /untradable:
+    get:
+      summary: Untradable Items
+      tags: [CherryTree API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Untradable" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+components:
+  schemas:
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+    ListEnvelope:
+      type: object
+      required: [total, results]
+      properties:
+        total: { type: number }
+        results: { type: array }
+    Material:
+      type: object
+      required: [itemId, itemName, amount]
+      properties:
+        itemId: { type: number }
+        itemName: { type: string }
+        amount: { type: number }
+    Drop:
+      type: object
+      required:
+        [
+          dropId,
+          itemId,
+          name,
+          rarity,
+          baseChance,
+          luckChance,
+          extremeLuckChance,
+        ]
+      properties:
+        dropId: { type: number }
+        itemId: { type: number }
+        name: { type: string }
+        rarity: { type: string }
+        baseChance: { type: number }
+        luckChance: { type: number }
+        extremeLuckChance: { type: number }
+    AlchemyItem:
+      type: object
+      required:
+        [
+          id,
+          itemId,
+          name,
+          levelRequired,
+          potionType,
+          potionTimer,
+          alchemyExpProvided,
+          attackBonus,
+          strengthBonus,
+          defenceBonus,
+          healthBonus,
+          materials,
+        ]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        name: { type: string }
+        levelRequired: { type: number }
+        potionType: { type: string }
+        potionTimer: { type: number }
+        alchemyExpProvided: { type: number }
+        attackBonus: { type: number }
+        strengthBonus: { type: number }
+        defenceBonus: { type: number }
+        healthBonus: { type: number }
+        materials:
+          type: array
+          items: { $ref: "#/components/schemas/Material" }
+    TheivingItem:
+      type: object
+      required:
+        [
+          id,
+          theivingLocation,
+          theivingExp,
+          theivingLevel,
+          theivingSuccess,
+          theivingDamage,
+          theivingCoins,
+          drops,
+        ]
+      properties:
+        id: { type: number }
+        theivingLocation: { type: string }
+        theivingExp: { type: number }
+        theivingLevel: { type: number }
+        theivingSuccess: { type: number }
+        theivingDamage: { type: number }
+        theivingCoins: { type: number }
+        drops:
+          type: array
+          items: { $ref: "#/components/schemas/Drop" }
+    Alchemy:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/AlchemyItem" }
+    BasecampItem:
+      type: object
+      required:
+        [
+          id,
+          baseTowerLevel,
+          baseTowerBenefit,
+          requiredSkills,
+          baseTowerItems,
+          baseTowerRewards,
+        ]
+      properties:
+        id: { type: number }
+        baseTowerLevel: { type: string }
+        baseTowerBenefit: { type: string }
+        requiredSkills:
+          type: array
+          items:
+            type: object
+            required: [name, level]
+            properties:
+              name: { type: string }
+              level: { type: number }
+        baseTowerItems:
+          type: array
+          items:
+            type: object
+            required: [itemId, name, amount]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+        baseTowerRewards:
+          type: array
+          items:
+            type: object
+            required: [type, name, amount]
+            properties:
+              itemId: { type: number }
+              type: { type: string }
+              name: { type: string }
+              amount: { type: number }
+    Basecamp:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/BasecampItem" }
+    BlessedItem:
+      type: object
+      required:
+        [
+          id,
+          itemId,
+          name,
+          level,
+          description,
+          requirementId,
+          requirement,
+          originalCost,
+          baseCamp57Cost,
+          tikiTheTicketCost,
+        ]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        name: { type: string }
+        level: { type: string }
+        description: { type: string }
+        requirementId: { type: number }
+        requirement: { type: string }
+        originalCost: { type: number }
+        baseCamp57Cost: { type: number }
+        tikiTheTicketCost: { type: number }
+        bothCost: { type: number }
+    Blessed:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/BlessedItem" }
+    CookingItem:
+      type: object
+      required:
+        [
+          id,
+          itemId,
+          name,
+          burntId,
+          burnt,
+          requiredLevel,
+          burntLevel,
+          burntChance,
+          cookingExp,
+          materials,
+        ]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        name: { type: string }
+        burntId: { type: number }
+        burnt: { type: string }
+        requiredLevel: { type: number }
+        burntLevel: { type: number }
+        burntChance: { type: number }
+        cookingExp: { type: number }
+        materials:
+          type: array
+          items:
+            type: object
+            required: [itemId, name]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+    Cooking:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/CookingItem" }
+    CraftingItem:
+      type: object
+      required:
+        [id, itemId, name, category, craftingLevel, craftingExp, materials]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        name: { type: string }
+        category: { type: string }
+        craftingLevel: { type: number }
+        craftingExp: { type: number }
+        materials:
+          type: array
+          items:
+            type: object
+            required: [itemId, name, amount]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+    Crafting:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/CraftingItem" }
+    DiscoveryItem:
+      type: object
+      required: [id, discoveryLocation, discoveryExp, discoveryLevel, drops]
+      properties:
+        id: { type: number }
+        discoveryLocation: { type: string }
+        discoveryExp: { type: number }
+        discoveryLevel: { type: number }
+        drops:
+          type: array
+          items: { $ref: "#/components/schemas/Drop" }
+    Discovery:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/DiscoveryItem" }
+    EventItem:
+      type: object
+      required: [id, itemId, name, drops]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        name: { type: string }
+        drops:
+          type: array
+          items:
+            type: object
+            required: [itemId, name, amount, percentage, text]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+              percentage: { type: number }
+              text: { type: string }
+    Event:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/EventItem" }
+    ExplorationItem:
+      type: object
+      required: [id, safe, level, steps, energy, exp, drops, metalDrops]
+      properties:
+        id: { type: number }
+        safe: { type: string }
+        level: { type: number }
+        steps: { type: number }
+        energy: { type: number }
+        exp: { type: number }
+        drops:
+          type: array
+          items:
+            type: object
+            required: [name, amount, percentage, text]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+              percentage: { type: number }
+              text: { type: string }
+        metalDrops:
+          type: array
+          items:
+            type: object
+            required: [name, amount, percentage, text]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+              percentage: { type: number }
+              text: { type: string }
+    Exploration:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/ExplorationItem" }
+    FarmingItem:
+      type: object
+      required:
+        [
+          id,
+          itemId,
+          seedName,
+          seedDurationInSeconds,
+          seedLevel,
+          seedExp,
+          rewardId,
+          reward,
+          chanceForScythe,
+          chanceForScytheText,
+        ]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        seedName: { type: string }
+        seedDurationInSeconds: { type: number }
+        seedLevel: { type: number }
+        seedExp: { type: number }
+        rewardId: { type: number }
+        reward: { type: string }
+        chanceForScythe: { type: number }
+        chanceForScytheText: { type: string }
+    Farming:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/FarmingItem" }
+    FishingItem:
+      type: object
+      required:
+        [
+          id,
+          fishingLocation,
+          fishingExp,
+          fishingLevel,
+          fishingSpeedInMilliseconds,
+          premiumLocation,
+          drops,
+        ]
+      properties:
+        id: { type: number }
+        fishingLocation: { type: string }
+        fishingExp: { type: number }
+        fishingLevel: { type: number }
+        fishingSpeedInMilliseconds: { type: number }
+        premiumLocation: { type: boolean }
+        drops:
+          type: array
+          items: { $ref: "#/components/schemas/Drop" }
+    Fishing:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/FishingItem" }
+    FletchingItem:
+      type: object
+      required:
+        [id, itemId, name, category, fletchingLevel, fletchingExp, materials]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        name: { type: string }
+        category: { type: string }
+        fletchingLevel: { type: number }
+        fletchingExp: { type: number }
+        materials:
+          type: array
+          items:
+            type: object
+            required: [itemId, name, amount]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+    Fletching:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/FletchingItem" }
+    ForestryItem:
+      type: object
+      required:
+        [
+          id,
+          itemId,
+          tree,
+          log,
+          forestryBaseSpeedInMilliseconds,
+          minimumForestryLevel,
+          nestChance,
+          forestryExp,
+          forestryBurnExp,
+        ]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        tree: { type: string }
+        log: { type: string }
+        forestryBaseSpeedInMilliseconds: { type: number }
+        minimumForestryLevel: { type: number }
+        nestChance: { type: number }
+        forestryExp: { type: number }
+        forestryBurnExp: { type: number }
+    Forestry:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/ForestryItem" }
+    GoldMarketItem:
+      type: object
+      required: [itemId, name, amount, type]
+      properties:
+        itemId: { type: number }
+        name: { type: string }
+        amount: { type: number }
+        cost: { type: number }
+        type: { type: string }
+    GoldMarket:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/GoldMarketItem" }
+    ItemsItem:
+      type: object
+      required:
+        [
+          id,
+          imageUrl,
+          name,
+          rarity,
+          value,
+          type,
+          healingAmount,
+          farmingLevel,
+          attackBonus,
+          strengthBonus,
+          defenceBonus,
+          healthBonus,
+          bowDamage,
+          bowCrit,
+          bowAccuracy,
+          bowSpeed,
+          description,
+          tradable,
+          usedIn,
+        ]
+      properties:
+        id: { type: number }
+        imageUrl: { type: string }
+        name: { type: string }
+        rarity: { type: string }
+        value: { type: number }
+        type: { type: string }
+        healingAmount: { type: number }
+        farmingLevel: { type: number }
+        attackBonus: { type: number }
+        strengthBonus: { type: number }
+        defenceBonus: { type: number }
+        healthBonus: { type: number }
+        bowDamage: { type: number }
+        bowCrit: { type: number }
+        bowAccuracy: { type: number }
+        bowSpeed: { type: number }
+        description: { type: string }
+        tradable: { type: boolean }
+        limited: { type: number }
+        crafting:
+          type: object
+          required: [name, category, craftingLevel, craftingExp, materials]
+          properties:
+            name: { type: string }
+            category: { type: string }
+            craftingLevel: { type: number }
+            craftingExp: { type: number }
+            materials:
+              type: array
+              items:
+                type: object
+                required: [itemId, name, amount]
+                properties:
+                  itemId: { type: number }
+                  name: { type: string }
+                  amount: { type: number }
+        cooking:
+          type: object
+          required:
+            [
+              name,
+              burnt,
+              cookingLevel,
+              burntLevel,
+              burntChance,
+              cookingExp,
+              materials,
+            ]
+          properties:
+            name: { type: string }
+            burnt: { type: string }
+            cookingLevel: { type: number }
+            burntLevel: { type: number }
+            burntChance: { type: number }
+            cookingExp: { type: number }
+            materials:
+              type: array
+              items:
+                type: object
+                required: [itemId, name]
+                properties:
+                  itemId: { type: number }
+                  name: { type: string }
+        farming:
+          type: object
+          required:
+            [
+              name,
+              farmingLevel,
+              farmingExp,
+              farmingSeed,
+              scythePercentage,
+              scytheText,
+            ]
+          properties:
+            name: { type: string }
+            farmingLevel: { type: number }
+            farmingExp: { type: number }
+            farmingSeed: { type: string }
+            scythePercentage: { type: number }
+            scytheText: { type: string }
+        mining:
+          type: object
+          required: [name, miningLevel, miningExp, gemPercentage, gemText]
+          properties:
+            name: { type: string }
+            miningLevel: { type: number }
+            miningExp: { type: number }
+            gemPercentage: { type: number }
+            gemText: { type: string }
+        fletching:
+          type: object
+          required: [name, category, fletchingLevel, fletchingExp, materials]
+          properties:
+            name: { type: string }
+            category: { type: string }
+            fletchingLevel: { type: number }
+            fletchingExp: { type: number }
+            materials:
+              type: array
+              items:
+                type: object
+                required: [itemId, name, amount]
+                properties:
+                  itemId: { type: number }
+                  name: { type: string }
+                  amount: { type: number }
+        forestry:
+          type: object
+          required: [name, tree, forestryLevel, forestryExp, forestryBurnExp]
+          properties:
+            name: { type: string }
+            tree: { type: string }
+            forestryLevel: { type: number }
+            forestryExp: { type: number }
+            forestryBurnExp: { type: number }
+        alchemy:
+          type: object
+          required:
+            [alchemyId, name, levelRequired, alchemyExpProvided, materials]
+          properties:
+            alchemyId: { type: number }
+            name: { type: string }
+            levelRequired: { type: number }
+            alchemyExpProvided: { type: number }
+            materials:
+              type: array
+              items:
+                type: object
+                required: [itemId, itemName, amount]
+                properties:
+                  itemId: { type: number }
+                  itemName: { type: string }
+                  amount: { type: number }
+        blessed:
+          type: object
+          required:
+            [
+              name,
+              level,
+              description,
+              originalCost,
+              baseCamp57Cost,
+              tikiTheTicketCost,
+              requirement,
+            ]
+          properties:
+            name: { type: string }
+            level: { type: string }
+            description: { type: string }
+            originalCost: { type: number }
+            baseCamp57Cost: { type: number }
+            tikiTheTicketCost: { type: number }
+            bothCost: { type: number }
+            requirement: { type: string }
+        chest:
+          type: array
+          items:
+            type: object
+            required: [name, min, max, percentage, text]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              min: { type: number }
+              max: { type: number }
+              percentage: { type: number }
+              text: { type: string }
+        monsterDrops:
+          type: array
+          items:
+            type: object
+            required:
+              [
+                dropId,
+                monsterId,
+                monsterName,
+                minAmount,
+                maxAmount,
+                baseChance,
+                luckChance,
+                extremeLuckChance,
+              ]
+            properties:
+              dropId: { type: number }
+              monsterId: { type: number }
+              monsterName: { type: string }
+              minAmount: { type: number }
+              maxAmount: { type: number }
+              rarity: { type: string }
+              baseChance: { type: number }
+              luckChance: { type: number }
+              extremeLuckChance: { type: number }
+        fishingDrops:
+          type: array
+          items:
+            type: object
+            required:
+              [
+                dropId,
+                locationId,
+                locationName,
+                locationLevel,
+                baseChance,
+                luckChance,
+                extremeLuckChance,
+              ]
+            properties:
+              dropId: { type: number }
+              locationId: { type: number }
+              locationName: { type: string }
+              locationLevel: { type: number }
+              baseChance: { type: number }
+              luckChance: { type: number }
+              extremeLuckChance: { type: number }
+        discoveryDrops:
+          type: array
+          items:
+            type: object
+            required:
+              [
+                dropId,
+                locationId,
+                locationName,
+                locationLevel,
+                baseChance,
+                luckChance,
+                extremeLuckChance,
+              ]
+            properties:
+              dropId: { type: number }
+              locationId: { type: number }
+              locationName: { type: string }
+              locationLevel: { type: number }
+              baseChance: { type: number }
+              luckChance: { type: number }
+              extremeLuckChance: { type: number }
+        theivingDrops:
+          type: array
+          items:
+            type: object
+            required:
+              [
+                dropId,
+                locationId,
+                locationName,
+                locationLevel,
+                baseChance,
+                luckChance,
+                extremeLuckChance,
+              ]
+            properties:
+              dropId: { type: number }
+              locationId: { type: number }
+              locationName: { type: string }
+              locationLevel: { type: number }
+              baseChance: { type: number }
+              luckChance: { type: number }
+              extremeLuckChance: { type: number }
+        safesDrops:
+          type: array
+          items:
+            type: object
+            required: [safeId, safeName, amount, percentage, chance]
+            properties:
+              safeId: { type: number }
+              safeName: { type: string }
+              amount: { type: number }
+              percentage: { type: number }
+              chance: { type: string }
+        explorationDrops:
+          type: array
+          items:
+            type: object
+            required:
+              [explorationId, explorationName, amount, percentage, chance]
+            properties:
+              explorationId: { type: number }
+              explorationName: { type: string }
+              amount: { type: number }
+              percentage: { type: number }
+              chance: { type: string }
+        eventDrops:
+          type: array
+          items:
+            type: object
+            required: [chestName, chestId, amount, chancePercentage, chanceText]
+            properties:
+              chestName: { type: string }
+              chestId: { type: number }
+              amount: { type: number }
+              chancePercentage: { type: number }
+              chanceText: { type: string }
+        foundInChests:
+          type: array
+          items:
+            type: object
+            required:
+              [
+                chestName,
+                chestId,
+                minAmount,
+                maxAmount,
+                chancePercentage,
+                chanceText,
+              ]
+            properties:
+              chestName: { type: string }
+              chestId: { type: number }
+              minAmount: { type: number }
+              maxAmount: { type: number }
+              chancePercentage: { type: number }
+              chanceText: { type: string }
+        secrets:
+          type: object
+          required:
+            [name, chance, chanceText, impactedByWishingWell, conditions]
+          properties:
+            name: { type: string }
+            chance: { type: number }
+            chanceText: { type: string }
+            chanceWithMaxWw: { type: number }
+            chanceWithMaxWwText: { type: string }
+            chanceWithMaxWwAndBC65: { type: number }
+            chanceWithMaxWwAndBC65Text: { type: string }
+            chanceWithMaxWwAndBC65AndRingOfSecrets: { type: number }
+            chanceWithMaxWwAndBC65AndRingOfSecretsText: { type: string }
+            chanceWithSoulReaperPotion: { type: number }
+            chanceWithSoulReaperPotionText: { type: string }
+            impactedByWishingWell: { type: boolean }
+            conditions:
+              type: array
+              items:
+                type: string
+        usedIn:
+          type: object
+          required: []
+          properties:
+            crafting:
+              type: array
+              items:
+                type: object
+                required: [craftingId, name, levelRequired]
+                properties:
+                  craftingId: { type: number }
+                  name: { type: string }
+                  levelRequired: { type: number }
+            alchemy:
+              type: array
+              items:
+                type: object
+                required: [alchemyId, name, levelRequired]
+                properties:
+                  alchemyId: { type: number }
+                  name: { type: string }
+                  levelRequired: { type: number }
+            cooking:
+              type: array
+              items:
+                type: object
+                required: [cookingId, name, burnt, levelRequired]
+                properties:
+                  cookingId: { type: number }
+                  name: { type: string }
+                  burnt: { type: string }
+                  levelRequired: { type: number }
+            fletching:
+              type: array
+              items:
+                type: object
+                required: [fletchingId, name, levelRequired]
+                properties:
+                  fletchingId: { type: number }
+                  name: { type: string }
+                  levelRequired: { type: number }
+            farming:
+              type: array
+              items:
+                type: object
+                required: [farmingId, name, levelRequired]
+                properties:
+                  farmingId: { type: number }
+                  name: { type: string }
+                  levelRequired: { type: number }
+            forestry:
+              type: array
+              items:
+                type: object
+                required: [forestryId, name, levelRequired]
+                properties:
+                  forestryId: { type: number }
+                  name: { type: string }
+                  levelRequired: { type: number }
+            quests:
+              type: array
+              items:
+                type: object
+                required: [questId, questName, questSeries, amount]
+                properties:
+                  questId: { type: number }
+                  questName: { type: string }
+                  questSeries: { type: string }
+                  amount: { type: number }
+            basecamps:
+              type: array
+              items:
+                type: object
+                required: [basecampId, BaseTowerLevel, amount]
+                properties:
+                  basecampId: { type: number }
+                  BaseTowerLevel: { type: string }
+                  amount: { type: number }
+            blessed:
+              type: object
+              required: [blessedId, blessedName]
+              properties:
+                blessedId: { type: number }
+                blessedName: { type: string }
+    Items:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/ItemsItem" }
+    LimitedItem:
+      type: object
+      required: [name, amount]
+      properties:
+        itemId: { type: number }
+        name: { type: string }
+        amount: { type: number }
+    Limited:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/LimitedItem" }
+    MiningItem:
+      type: object
+      required:
+        [
+          id,
+          itemId,
+          miningRock,
+          miningBaseSpeedInMilliseconds,
+          minimumMiningLevel,
+          miningSuccessBaseRate,
+          miningExp,
+          chanceForIlluminantGem,
+          chanceForIlluminantGemText,
+        ]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        miningRock: { type: string }
+        miningBaseSpeedInMilliseconds: { type: number }
+        minimumMiningLevel: { type: number }
+        miningSuccessBaseRate: { type: number }
+        miningExp: { type: number }
+        chanceForIlluminantGem: { type: number }
+        chanceForIlluminantGemText: { type: string }
+    Mining:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/MiningItem" }
+    MonstersItem:
+      type: object
+      required:
+        [
+          id,
+          name,
+          imageUrl,
+          isGod,
+          health,
+          attack,
+          strength,
+          defence,
+          combatLevel,
+          attackSpeedText,
+          attackSpeed,
+          slayerExp,
+          slayerLevel,
+          weakness,
+          area,
+          treasureScrollChance,
+          treasureScrollChanceWithWwMax,
+          treasureScrollChanceWithWwMaxAndBC72,
+          drops,
+        ]
+      properties:
+        id: { type: number }
+        name: { type: string }
+        imageUrl: { type: string }
+        isGod: { type: boolean }
+        health: { type: number }
+        attack: { type: number }
+        strength: { type: number }
+        defence: { type: number }
+        combatLevel: { type: number }
+        attackSpeedText: { type: string }
+        attackSpeed: { type: number }
+        slayerExp: { type: number }
+        slayerLevel: { type: number }
+        weakness: { type: string }
+        area: { type: string }
+        treasureScrollChance: { type: number }
+        treasureScrollChanceWithWwMax: { type: number }
+        treasureScrollChanceWithWwMaxAndBC72: { type: number }
+        drops:
+          type: array
+          items:
+            type: object
+            required:
+              [
+                dropId,
+                itemId,
+                name,
+                min,
+                max,
+                baseChance,
+                luckChance,
+                extremeLuckChance,
+              ]
+            properties:
+              dropId: { type: number }
+              itemId: { type: number }
+              name: { type: string }
+              rarity: { type: string }
+              min: { type: number }
+              max: { type: number }
+              baseChance: { type: number }
+              luckChance: { type: number }
+              extremeLuckChance: { type: number }
+    Monsters:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/MonstersItem" }
+    QuestsItem:
+      type: object
+      required:
+        [id, questName, questSeries, requiredSkills, questItems, questRewards]
+      properties:
+        id: { type: number }
+        questName: { type: string }
+        questSeries: { type: string }
+        prerequisiteQuest: { type: string }
+        requiredSkills:
+          type: array
+          items:
+            type: object
+            required: [name, level]
+            properties:
+              name: { type: string }
+              level: { type: number }
+        questItems:
+          type: array
+          items:
+            type: object
+            required: [itemId, name, amount]
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+        questRewards:
+          type: array
+          items:
+            type: object
+            required: [type, amount]
+            properties:
+              type: { type: string }
+              skill: { type: string }
+              amount: { type: number }
+              itemId: { type: number }
+              name: { type: string }
+    Quests:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/QuestsItem" }
+    SafecrackingItem:
+      type: object
+      required: [id, safe, level, locks, speed, width, exp, drops, boostDrops]
+      properties:
+        id: { type: number }
+        safe: { type: string }
+        level: { type: number }
+        locks: { type: number }
+        speed: { type: number }
+        width: { type: number }
+        exp: { type: number }
+        drops:
+          type: array
+          required: [itemId, name, amount, percentage, text]
+          items:
+            type: object
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+              percentage: { type: number }
+              text: { type: string }
+        boostDrops:
+          type: array
+          required: [itemId, name, amount, percentage, text]
+          items:
+            type: object
+            properties:
+              itemId: { type: number }
+              name: { type: string }
+              amount: { type: number }
+              percentage: { type: number }
+              text: { type: string }
+    Safecracking:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/SafecrackingItem" }
+    SecretRaresItem:
+      type: object
+      required: [id, itemId, itemName, secretDrops]
+      properties:
+        id: { type: number }
+        itemId: { type: number }
+        itemName: { type: string }
+        secretDrops:
+          type: array
+          items:
+            type: object
+            required: [chance, chanceText, impactedByWishingWell, conditions]
+            properties:
+              chance: { type: number }
+              chanceText: { type: string }
+              chanceWithMaxWw: { type: number }
+              chanceWithMaxWwText: { type: string }
+              chanceWithMaxWwAndBC65: { type: number }
+              chanceWithMaxWwAndBC65Text: { type: string }
+              chanceWithMaxWwAndBC65AndRingOfSecrets: { type: number }
+              chanceWithMaxWwAndBC65AndRingOfSecretsText: { type: string }
+              chanceWithSoulReaperPotion: { type: number }
+              chanceWithSoulReaperPotionText: { type: string }
+              impactedByWishingWell: { type: boolean }
+              conditions:
+                type: array
+                items:
+                  type: string
+    SecretRares:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/SecretRaresItem" }
+    SilverTraderItem:
+      type: object
+      required: [itemId, name, category, cost]
+      properties:
+        itemId: { type: number }
+        name: { type: string }
+        category: { type: string }
+        cost:
+          type: array
+          items:
+            type: object
+            required: [quantity, total]
+            properties:
+              quantity: { type: number }
+              total: { type: number }
+    SilverTrader:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/SilverTraderItem" }
+    Theiving:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/TheivingItem" }
+    UntradableItem:
+      type: object
+      required: [itemId, name]
+      properties:
+        itemId: { type: number }
+        name: { type: string }
+    Untradable:
+      allOf:
+        - $ref: "#/components/schemas/ListEnvelope"
+        - type: object
+          properties:
+            results:
+              type: array
+              items: { $ref: "#/components/schemas/UntradableItem" }
