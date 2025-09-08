@@ -4,7 +4,7 @@ info:
   description: An API created by decompiling the CherryTree Android App
   license:
     name: MIT
-  version: 1.0.0
+  version: 1.0.1
 servers:
   - url: https://cherrytree.soyab.uk
 tags:
@@ -365,7 +365,7 @@ components:
       required: [error]
       properties:
         error: { type: string }
-    ListEnvelope:
+    Response:
       type: object
       required: [total, results]
       properties:
@@ -455,13 +455,12 @@ components:
           type: array
           items: { $ref: "#/components/schemas/Drop" }
     Alchemy:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/AlchemyItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/AlchemyItem" }
     BasecampItem:
       type: object
       required:
@@ -505,13 +504,12 @@ components:
               name: { type: string }
               amount: { type: number }
     Basecamp:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/BasecampItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/BasecampItem" }
     BlessedItem:
       type: object
       required:
@@ -540,13 +538,12 @@ components:
         tikiTheTicketCost: { type: number }
         bothCost: { type: number }
     Blessed:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/BlessedItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/BlessedItem" }
     CookingItem:
       type: object
       required:
@@ -581,13 +578,12 @@ components:
               itemId: { type: number }
               name: { type: string }
     Cooking:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/CookingItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/CookingItem" }
     CraftingItem:
       type: object
       required:
@@ -609,13 +605,12 @@ components:
               name: { type: string }
               amount: { type: number }
     Crafting:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/CraftingItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/CraftingItem" }
     DiscoveryItem:
       type: object
       required: [id, discoveryLocation, discoveryExp, discoveryLevel, drops]
@@ -628,13 +623,12 @@ components:
           type: array
           items: { $ref: "#/components/schemas/Drop" }
     Discovery:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/DiscoveryItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/DiscoveryItem" }
     EventItem:
       type: object
       required: [id, itemId, name, drops]
@@ -654,13 +648,12 @@ components:
               percentage: { type: number }
               text: { type: string }
     Event:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/EventItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/EventItem" }
     ExplorationItem:
       type: object
       required: [id, safe, level, steps, energy, exp, drops, metalDrops]
@@ -694,13 +687,12 @@ components:
               percentage: { type: number }
               text: { type: string }
     Exploration:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/ExplorationItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/ExplorationItem" }
     FarmingItem:
       type: object
       required:
@@ -728,13 +720,12 @@ components:
         chanceForScythe: { type: number }
         chanceForScytheText: { type: string }
     Farming:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/FarmingItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/FarmingItem" }
     FishingItem:
       type: object
       required:
@@ -758,13 +749,12 @@ components:
           type: array
           items: { $ref: "#/components/schemas/Drop" }
     Fishing:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/FishingItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/FishingItem" }
     FletchingItem:
       type: object
       required:
@@ -786,13 +776,12 @@ components:
               name: { type: string }
               amount: { type: number }
     Fletching:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/FletchingItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/FletchingItem" }
     ForestryItem:
       type: object
       required:
@@ -818,13 +807,12 @@ components:
         forestryExp: { type: number }
         forestryBurnExp: { type: number }
     Forestry:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/ForestryItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/ForestryItem" }
     GoldMarketItem:
       type: object
       required: [itemId, name, amount, type]
@@ -835,13 +823,12 @@ components:
         cost: { type: number }
         type: { type: string }
     GoldMarket:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/GoldMarketItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/GoldMarketItem" }
     ItemsItem:
       type: object
       required:
@@ -1285,13 +1272,12 @@ components:
                 blessedId: { type: number }
                 blessedName: { type: string }
     Items:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/ItemsItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/ItemsItem" }
     LimitedItem:
       type: object
       required: [name, amount]
@@ -1300,13 +1286,12 @@ components:
         name: { type: string }
         amount: { type: number }
     Limited:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/LimitedItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/LimitedItem" }
     MiningItem:
       type: object
       required:
@@ -1332,13 +1317,12 @@ components:
         chanceForIlluminantGem: { type: number }
         chanceForIlluminantGemText: { type: string }
     Mining:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/MiningItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/MiningItem" }
     MonstersItem:
       type: object
       required:
@@ -1408,13 +1392,12 @@ components:
               luckChance: { type: number }
               extremeLuckChance: { type: number }
     Monsters:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/MonstersItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/MonstersItem" }
     QuestsItem:
       type: object
       required:
@@ -1453,13 +1436,12 @@ components:
               itemId: { type: number }
               name: { type: string }
     Quests:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/QuestsItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/QuestsItem" }
     SafecrackingItem:
       type: object
       required: [id, safe, level, locks, speed, width, exp, drops, boostDrops]
@@ -1494,13 +1476,12 @@ components:
               percentage: { type: number }
               text: { type: string }
     Safecracking:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/SafecrackingItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/SafecrackingItem" }
     SecretRaresItem:
       type: object
       required: [id, itemId, itemName, secretDrops]
@@ -1530,13 +1511,12 @@ components:
                 items:
                   type: string
     SecretRares:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/SecretRaresItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/SecretRaresItem" }
     SilverTraderItem:
       type: object
       required: [itemId, name, category, cost]
@@ -1553,21 +1533,19 @@ components:
               quantity: { type: number }
               total: { type: number }
     SilverTrader:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/SilverTraderItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/SilverTraderItem" }
     Theiving:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/TheivingItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/TheivingItem" }
     UntradableItem:
       type: object
       required: [itemId, name]
@@ -1575,10 +1553,9 @@ components:
         itemId: { type: number }
         name: { type: string }
     Untradable:
-      allOf:
-        - $ref: "#/components/schemas/ListEnvelope"
-        - type: object
-          properties:
-            results:
-              type: array
-              items: { $ref: "#/components/schemas/UntradableItem" }
+      - $ref: "#/components/schemas/Response"
+      - type: object
+        properties:
+          results:
+            type: array
+            items: { $ref: "#/components/schemas/UntradableItem" }
