@@ -4,7 +4,7 @@ info:
   description: An API created using the official IdleMMO API
   license:
     name: MIT
-  version: 1.0.1
+  version: 1.0.2
 servers:
   - url: https://immo.soyab.uk
 tags:
@@ -286,16 +286,9 @@ components:
         loot:
           type: array
           items: { $ref: "#/components/schemas/LootDrop" }
-        status: { $ref: "#/components/schemas/WorldBossStatus" }
+        status: { type: string, enum: [READY_FOR_LOBBY, IN_PROGRESS, RESPAWNING] }
         battle_starts_at: { type: string }
         battle_ends_at: { type: string }
-    WorldBossStatus:
-      type: string
-      enum: [READY_FOR_LOBBY, IN_PROGRESS, RESPAWNING]
-      x-enumDescriptions:
-        READY_FOR_LOBBY: Ready to fight
-        IN_PROGRESS: Fight in progress
-        RESPAWNING: Unavailable to fight
     Item:
       type: object
       required:
@@ -436,67 +429,6 @@ components:
                 properties:
                   id: { type: number }
                   name: { type: string }
-    InspectItem:
-      type: object
-      required:
-        [
-          hashed_id,
-          name,
-          description,
-          image_url,
-          type,
-          quality,
-          vendor_price,
-          is_tradeable,
-          max_tier,
-          requirements,
-          stats,
-          effects,
-          tier_modifiers,
-          upgrade_requirements,
-          health_restore,
-          hunger_restore,
-        ]
-      properties:
-        hashed_id: { type: string }
-        name: { type: string }
-        description: { type: string }
-        image_url: { type: string }
-        type: { type: string }
-        quality: { type: string }
-        vendor_price: { type: number }
-        is_tradeable: { type: boolean }
-        max_tier: { type: number }
-        requirements:
-          type: object
-          required: [combat, defence]
-          properties:
-            combat: { type: number }
-            defence: { type: number }
-        stats:
-          type: object
-          required: [agility, protection, movement_speed]
-          properties:
-            agility: { type: number }
-            protection: { type: number }
-            movement_speed: { type: number }
-        effects: {}
-        tier_modifiers:
-          type: object
-          required: [agility, protection]
-          properties:
-            agility: { type: number }
-            protection: { type: number }
-        upgrade_requirements:
-          type: array
-          items:
-            type: object
-            required: [item_id, quantity]
-            properties:
-              item_id: { type: number }
-              quantity: { type: number }
-        health_restore: {}
-        hunger_restore: {}
     MarketHistoryEntry:
       type: object
       required: [date, average_price, total_sold]
@@ -531,6 +463,7 @@ components:
     MarketListings:
       type: object
       required: [history_data, latest_sold, type, endpoint_updates_at]
+      description: "Market Listings"
       properties:
         history_data:
           type: array
@@ -543,6 +476,7 @@ components:
     MarketOrders:
       type: object
       required: [history_data, latest_sold, type, endpoint_updates_at]
+      description: "Market Orders"
       properties:
         history_data:
           type: array
@@ -647,7 +581,7 @@ components:
       required: [item]
       properties:
         item:
-          $ref: "#/components/schemas/InspectItem"
+          $ref: "#/components/schemas/Item"
     Market:
       oneOf:
         - $ref: "#/components/schemas/MarketOrders"
