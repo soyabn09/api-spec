@@ -178,7 +178,6 @@ components:
       required: [error]
       properties:
         error: { type: string }
-    # Common sub-schemas inferred from immo/*.json
     Location:
       type: object
       required: [id, name]
@@ -287,9 +286,16 @@ components:
         loot:
           type: array
           items: { $ref: "#/components/schemas/LootDrop" }
-        status: { type: string }
+        status: { $ref: "#/components/schemas/WorldBossStatus" }
         battle_starts_at: { type: string }
         battle_ends_at: { type: string }
+    WorldBossStatus:
+      type: string
+      enum: [READY_FOR_LOBBY, IN_PROGRESS, RESPAWNING]
+      x-enumDescriptions:
+        READY_FOR_LOBBY: Ready to fight
+        IN_PROGRESS: Fight in progress
+        RESPAWNING: Unavailable to fight
     Item:
       type: object
       required:
@@ -549,7 +555,6 @@ components:
     Dungeons:
       type: object
       required: [dungeons, endpoint_updates_at]
-      description: Dungeons payload based on immo/dungeons.json
       properties:
         dungeons:
           type: array
@@ -558,7 +563,6 @@ components:
     Enemies:
       type: object
       required: [enemies, endpoint_updates_at]
-      description: Enemies payload based on immo/enemies.json
       properties:
         enemies:
           type: array
@@ -567,7 +571,6 @@ components:
     WorldBoss:
       type: object
       required: [world_bosses, endpoint_updates_at]
-      description: World boss payload based on immo/worldboss.json
       properties:
         world_bosses:
           type: array
@@ -575,11 +578,56 @@ components:
         endpoint_updates_at: { type: string }
     Shrine:
       type: object
-      description: Shrine payload (shape TBD; total/results removed)
+      required: [progress, endpoint_updates_at]
+      properties:
+        progress:
+          type: array
+          items:
+            type: object
+            required:
+              [
+                id,
+                tier,
+                effects,
+                current_value,
+                target_value,
+                target_remaining,
+                percentage,
+                goal_reached_at,
+                is_active,
+                in_progress,
+                can_activate,
+              ]
+            properties:
+              id: { type: number }
+              tier:
+                type: object
+                required: [key, name]
+                properties:
+                  key: { type: string }
+                  name: { type: string }
+              effects:
+                type: array
+                items:
+                  type: object
+                  required: [target, attribute, value, value_type]
+                  properties:
+                    target: { type: string }
+                    attribute: { type: string }
+                    value: { type: number }
+                    value_type: { type: string }
+              current_value: { type: number }
+              target_value: { type: number }
+              target_remaining: { type: number }
+              percentage: { type: number }
+              goal_reached_at: { type: string, nullable: true }
+              is_active: { type: boolean }
+              in_progress: { type: boolean }
+              can_activate: { type: boolean }
+        endpoint_updates_at: { type: string }
     Items:
       type: object
       required: [items, pagination]
-      description: Items payload based on immo/items.json
       properties:
         items:
           type: array
@@ -597,12 +645,10 @@ components:
     Inspect:
       type: object
       required: [item]
-      description: Inspect payload based on immo/inspect.json
       properties:
         item:
           $ref: "#/components/schemas/InspectItem"
     Market:
-      description: Market payload based on immo/market_*.json
       oneOf:
         - $ref: "#/components/schemas/MarketOrders"
         - $ref: "#/components/schemas/MarketListings"

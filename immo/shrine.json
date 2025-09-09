@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "progress": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "tier": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": ["key", "name"]
+          },
+          "effects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "target": {
+                  "type": "string"
+                },
+                "attribute": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "number"
+                },
+                "value_type": {
+                  "type": "string"
+                }
+              },
+              "required": ["target", "attribute", "value", "value_type"]
+            }
+          },
+          "current_value": {
+            "type": "number"
+          },
+          "target_value": {
+            "type": "number"
+          },
+          "target_remaining": {
+            "type": "number"
+          },
+          "percentage": {
+            "type": "number"
+          },
+          "goal_reached_at": {},
+          "is_active": {
+            "type": "boolean"
+          },
+          "in_progress": {
+            "type": "boolean"
+          },
+          "can_activate": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "tier",
+          "effects",
+          "current_value",
+          "target_value",
+          "target_remaining",
+          "percentage",
+          "goal_reached_at",
+          "is_active",
+          "in_progress",
+          "can_activate"
+        ]
+      }
+    },
+    "endpoint_updates_at": {
+      "type": "string"
+    }
+  },
+  "required": ["progress", "endpoint_updates_at"]
+}
