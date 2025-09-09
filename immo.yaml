@@ -1,0 +1,608 @@
+openapi: 3.0.3
+info:
+  title: IdleMMO API
+  description: An API created using the official IdleMMO API
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+  - url: https://immo.soyab.uk
+tags:
+  - name: IMMO API
+    x-page-title: IMMO API
+    x-page-description: Public endpoints for IMMO data
+paths:
+  /dungeons:
+    get:
+      summary: Dungeons
+      tags: [IMMO API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Dungeons" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /enemies:
+    get:
+      summary: Enemies
+      tags: [IMMO API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Enemies" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /worldboss:
+    get:
+      summary: WorldBoss
+      tags: [IMMO API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/WorldBoss" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /shrine:
+    get:
+      summary: Shrine
+      tags: [IMMO API]
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Shrine" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /item:
+    get:
+      summary: Items
+      tags: [IMMO API]
+      parameters:
+        - name: sortBy
+          in: query
+          required: false
+          schema: { type: string }
+        - name: order
+          in: query
+          required: false
+          schema: { type: string, enum: [asc, desc] }
+        - name: fields
+          in: query
+          required: false
+          schema: { type: string }
+        - name: page
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, default: 1 }
+        - name: limit
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, default: 50 }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Items" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /inspect:
+    get:
+      summary: Inspect
+      tags: [IMMO API]
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Inspect" }
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+  /market:
+    get:
+      summary: Market
+      tags: [IMMO API]
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema: { type: string }
+        - name: tier
+          in: query
+          required: true
+          schema: { type: integer, minimum: 1 }
+        - name: type
+          in: query
+          required: true
+          schema: { type: string, enum: [orders, listings] }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Market" }
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+components:
+  schemas:
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+    # Common sub-schemas inferred from immo/*.json
+    Location:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: number }
+        name: { type: string }
+    LootDrop:
+      type: object
+      required: [hashed_item_id, name, image_url, quality, quantity, chance]
+      properties:
+        hashed_item_id: { type: string }
+        name: { type: string }
+        image_url: { type: string }
+        quality: { type: string }
+        quantity: { type: number }
+        chance: { type: number }
+    Dungeon:
+      type: object
+      required:
+        [
+          id,
+          name,
+          description,
+          image_url,
+          level_required,
+          difficulty,
+          length,
+          cost,
+          shards,
+          completion_requirement,
+          location,
+          loot,
+          experience,
+        ]
+      properties:
+        id: { type: number }
+        name: { type: string }
+        description: { type: string }
+        image_url: { type: string }
+        level_required: { type: number }
+        difficulty: { type: number }
+        length: { type: number }
+        cost: { type: number }
+        shards: { type: number }
+        completion_requirement: { type: number }
+        location: { $ref: "#/components/schemas/Location" }
+        loot:
+          type: array
+          items: { $ref: "#/components/schemas/LootDrop" }
+        experience:
+          type: object
+          required: [skills]
+          properties:
+            skills:
+              type: object
+              required: [combat, dungeoneering]
+              properties:
+                combat: { type: number }
+                dungeoneering: { type: number }
+    Enemy:
+      type: object
+      required:
+        [
+          id,
+          name,
+          image_url,
+          level,
+          experience,
+          health,
+          chance_of_loot,
+          location,
+          loot,
+        ]
+      properties:
+        id: { type: number }
+        name: { type: string }
+        image_url: { type: string }
+        level: { type: number }
+        experience: { type: number }
+        health: { type: number }
+        chance_of_loot: { type: number }
+        location: { $ref: "#/components/schemas/Location" }
+        loot:
+          type: array
+          items: { $ref: "#/components/schemas/LootDrop" }
+    WorldBossEntry:
+      type: object
+      required:
+        [
+          id,
+          name,
+          image_url,
+          level,
+          location,
+          loot,
+          status,
+          battle_starts_at,
+          battle_ends_at,
+        ]
+      properties:
+        id: { type: number }
+        name: { type: string }
+        image_url: { type: string }
+        level: { type: number }
+        location: { $ref: "#/components/schemas/Location" }
+        loot:
+          type: array
+          items: { $ref: "#/components/schemas/LootDrop" }
+        status: { type: string }
+        battle_starts_at: { type: string }
+        battle_ends_at: { type: string }
+    Item:
+      type: object
+      required:
+        [
+          "hashed_id",
+          "name",
+          "image_url",
+          "type",
+          "quality",
+          "vendor_price",
+          "is_tradeable",
+          "max_tier",
+        ]
+      properties:
+        hashed_id: { type: string }
+        name: { type: string }
+        description: { type: string }
+        image_url: { type: string }
+        type: { type: string }
+        quality: { type: string }
+        vendor_price: { type: number }
+        is_tradeable: { type: boolean }
+        max_tier: { type: number }
+        pet:
+          type: object
+          required: [hashed_id, name, description, image_url]
+          properties:
+            hashed_id: { type: string }
+            name: { type: string }
+            description: { type: string }
+            image_url: { type: string }
+        requirements:
+          type: object
+          properties:
+            combat: { type: number }
+            strength: { type: number }
+            defence: { type: number }
+            mining: { type: number }
+            fishing: { type: number }
+            woodcutting: { type: number }
+            dexterity: { type: number }
+        stats:
+          type: object
+          properties:
+            agility: { type: number }
+            accuracy: { type: number }
+            attack_power: { type: number }
+            critical_damage: { type: number }
+            critical_chance: { type: number }
+            protection: { type: number }
+            movement_speed: { type: number }
+        effects:
+          type: array
+          items:
+            type: object
+            required: [value, target, attribute, value_type]
+            properties:
+              value: { type: number }
+              target: { type: string }
+              attribute: { type: string }
+              value_type: { type: string }
+        tier_modifiers:
+          type: object
+          properties:
+            agility: { type: number }
+            accuracy: { type: number }
+            attack_power: { type: number }
+            critical_damage: { type: number }
+            protection: { type: number }
+        recipe:
+          type: object
+          required: [skill, level_required, experience, materials, result]
+          properties:
+            skill: { type: string }
+            level_required: { type: number }
+            max_uses: { type: number }
+            experience:
+              type: object
+              required: [stats, skills]
+              properties:
+                stats:
+                  type: object
+                  properties:
+                    speed: { type: number }
+                    strength: { type: number }
+                skills:
+                  type: object
+                  properties:
+                    alchemy: { type: number }
+                    forge: { type: number }
+            materials:
+              type: array
+              items:
+                type: object
+                required: [hashed_item_id, item_name, quantity]
+                properties:
+                  hashed_item_id: { type: string }
+                  item_name: { type: string }
+                  quantity: { type: number }
+            result:
+              type: object
+              required: [hashed_item_id, item_name]
+              properties:
+                hashed_item_id: { type: string }
+                item_name: { type: string }
+        upgrade_requirements:
+          type: array
+          items:
+            type: object
+            required: [item_id, quantity]
+            properties:
+              item_id: { type: number }
+              quantity: { type: number }
+        health_restore: { type: number }
+        hunger_restore: { type: number }
+        where_to_find:
+          type: object
+          properties:
+            dungeons:
+              type: array
+              items:
+                type: object
+                properties:
+                  id: { type: number }
+                  name: { type: string }
+            enemies:
+              type: array
+              items:
+                type: object
+                properties:
+                  id: { type: number }
+                  name: { type: string }
+                  level: { type: number }
+            world_bosses:
+              type: array
+              items:
+                type: object
+                properties:
+                  id: { type: number }
+                  name: { type: string }
+    InspectItem:
+      type: object
+      required:
+        [
+          hashed_id,
+          name,
+          description,
+          image_url,
+          type,
+          quality,
+          vendor_price,
+          is_tradeable,
+          max_tier,
+          requirements,
+          stats,
+          effects,
+          tier_modifiers,
+          upgrade_requirements,
+          health_restore,
+          hunger_restore,
+        ]
+      properties:
+        hashed_id: { type: string }
+        name: { type: string }
+        description: { type: string }
+        image_url: { type: string }
+        type: { type: string }
+        quality: { type: string }
+        vendor_price: { type: number }
+        is_tradeable: { type: boolean }
+        max_tier: { type: number }
+        requirements:
+          type: object
+          required: [combat, defence]
+          properties:
+            combat: { type: number }
+            defence: { type: number }
+        stats:
+          type: object
+          required: [agility, protection, movement_speed]
+          properties:
+            agility: { type: number }
+            protection: { type: number }
+            movement_speed: { type: number }
+        effects: {}
+        tier_modifiers:
+          type: object
+          required: [agility, protection]
+          properties:
+            agility: { type: number }
+            protection: { type: number }
+        upgrade_requirements:
+          type: array
+          items:
+            type: object
+            required: [item_id, quantity]
+            properties:
+              item_id: { type: number }
+              quantity: { type: number }
+        health_restore: {}
+        hunger_restore: {}
+    MarketHistoryEntry:
+      type: object
+      required: [date, average_price, total_sold]
+      properties:
+        date: { type: string }
+        average_price: { type: number }
+        total_sold: { type: number }
+    ItemRef:
+      type: object
+      required: [hashed_id, name, image_url]
+      properties:
+        hashed_id: { type: string }
+        name: { type: string }
+        image_url: { type: string }
+    LatestSoldListing:
+      type: object
+      required: [item, tier, quantity, price_per_item, total_price, sold_at]
+      properties:
+        item: { $ref: "#/components/schemas/ItemRef" }
+        tier: { type: number }
+        quantity: { type: number }
+        price_per_item: { type: number }
+        total_price: { type: number }
+        sold_at: { type: string }
+    LatestSoldOrder:
+      allOf:
+        - $ref: "#/components/schemas/LatestSoldListing"
+        - type: object
+          required: [id]
+          properties:
+            id: { type: number }
+    MarketListings:
+      type: object
+      required: [history_data, latest_sold, type, endpoint_updates_at]
+      properties:
+        history_data:
+          type: array
+          items: { $ref: "#/components/schemas/MarketHistoryEntry" }
+        latest_sold:
+          type: array
+          items: { $ref: "#/components/schemas/LatestSoldListing" }
+        type: { type: string }
+        endpoint_updates_at: { type: string }
+    MarketOrders:
+      type: object
+      required: [history_data, latest_sold, type, endpoint_updates_at]
+      properties:
+        history_data:
+          type: array
+          items: { $ref: "#/components/schemas/MarketHistoryEntry" }
+        latest_sold:
+          type: array
+          items: { $ref: "#/components/schemas/LatestSoldOrder" }
+        type: { type: string }
+        endpoint_updates_at: { type: string }
+    Dungeons:
+      type: object
+      required: [dungeons, endpoint_updates_at]
+      description: Dungeons payload based on immo/dungeons.json
+      properties:
+        dungeons:
+          type: array
+          items: { $ref: "#/components/schemas/Dungeon" }
+        endpoint_updates_at: { type: string }
+    Enemies:
+      type: object
+      required: [enemies, endpoint_updates_at]
+      description: Enemies payload based on immo/enemies.json
+      properties:
+        enemies:
+          type: array
+          items: { $ref: "#/components/schemas/Enemy" }
+        endpoint_updates_at: { type: string }
+    WorldBoss:
+      type: object
+      required: [world_bosses, endpoint_updates_at]
+      description: World boss payload based on immo/worldboss.json
+      properties:
+        world_bosses:
+          type: array
+          items: { $ref: "#/components/schemas/WorldBossEntry" }
+        endpoint_updates_at: { type: string }
+    Shrine:
+      type: object
+      description: Shrine payload (shape TBD; total/results removed)
+    Items:
+      type: object
+      required: [items, pagination]
+      description: Items payload based on immo/items.json
+      properties:
+        items:
+          type: array
+          items: { $ref: "#/components/schemas/Item" }
+        pagination:
+          type: object
+          required: [current_page, last_page, per_page, total, from, to]
+          properties:
+            current_page: { type: number }
+            last_page: { type: number }
+            per_page: { type: number }
+            total: { type: number }
+            from: { type: number }
+            to: { type: number }
+    Inspect:
+      type: object
+      required: [item]
+      description: Inspect payload based on immo/inspect.json
+      properties:
+        item:
+          $ref: "#/components/schemas/InspectItem"
+    Market:
+      description: Market payload based on immo/market_*.json
+      oneOf:
+        - $ref: "#/components/schemas/MarketOrders"
+        - $ref: "#/components/schemas/MarketListings"

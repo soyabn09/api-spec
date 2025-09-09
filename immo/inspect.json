@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "item": {
+      "type": "object",
+      "properties": {
+        "hashed_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "quality": {
+          "type": "string"
+        },
+        "vendor_price": {
+          "type": "number"
+        },
+        "is_tradeable": {
+          "type": "boolean"
+        },
+        "max_tier": {
+          "type": "number"
+        },
+        "requirements": {
+          "type": "object",
+          "properties": {
+            "combat": {
+              "type": "number"
+            },
+            "defence": {
+              "type": "number"
+            }
+          },
+          "required": ["combat", "defence"]
+        },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "agility": {
+              "type": "number"
+            },
+            "protection": {
+              "type": "number"
+            },
+            "movement_speed": {
+              "type": "number"
+            }
+          },
+          "required": ["agility", "protection", "movement_speed"]
+        },
+        "effects": {},
+        "tier_modifiers": {
+          "type": "object",
+          "properties": {
+            "agility": {
+              "type": "number"
+            },
+            "protection": {
+              "type": "number"
+            }
+          },
+          "required": ["agility", "protection"]
+        },
+        "upgrade_requirements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "item_id": {
+                "type": "number"
+              },
+              "quantity": {
+                "type": "number"
+              }
+            },
+            "required": ["item_id", "quantity"]
+          }
+        },
+        "health_restore": {},
+        "hunger_restore": {}
+      },
+      "required": [
+        "hashed_id",
+        "name",
+        "description",
+        "image_url",
+        "type",
+        "quality",
+        "vendor_price",
+        "is_tradeable",
+        "max_tier",
+        "requirements",
+        "stats",
+        "effects",
+        "tier_modifiers",
+        "upgrade_requirements",
+        "health_restore",
+        "hunger_restore"
+      ]
+    }
+  },
+  "required": ["item"]
+}

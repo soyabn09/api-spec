@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "world_bosses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "level": {
+            "type": "number"
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": ["id", "name"]
+          },
+          "loot": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "hashed_item_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "image_url": {
+                  "type": "string"
+                },
+                "quality": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "number"
+                },
+                "chance": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "hashed_item_id",
+                "name",
+                "image_url",
+                "quality",
+                "quantity",
+                "chance"
+              ]
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "battle_starts_at": {
+            "type": "string"
+          },
+          "battle_ends_at": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "image_url",
+          "level",
+          "location",
+          "loot",
+          "status",
+          "battle_starts_at",
+          "battle_ends_at"
+        ]
+      }
+    },
+    "endpoint_updates_at": {
+      "type": "string"
+    }
+  },
+  "required": ["world_bosses", "endpoint_updates_at"]
+}

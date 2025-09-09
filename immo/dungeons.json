@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "dungeons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "level_required": {
+            "type": "number"
+          },
+          "difficulty": {
+            "type": "number"
+          },
+          "length": {
+            "type": "number"
+          },
+          "cost": {
+            "type": "number"
+          },
+          "shards": {
+            "type": "number"
+          },
+          "completion_requirement": {
+            "type": "number"
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": ["id", "name"]
+          },
+          "loot": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "hashed_item_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "image_url": {
+                  "type": "string"
+                },
+                "quality": {
+                  "type": "string"
+                },
+                "quantity": {},
+                "chance": {}
+              },
+              "required": [
+                "hashed_item_id",
+                "name",
+                "image_url",
+                "quality",
+                "quantity",
+                "chance"
+              ]
+            }
+          },
+          "experience": {
+            "type": "object",
+            "properties": {
+              "skills": {
+                "type": "object",
+                "properties": {
+                  "combat": {
+                    "type": "number"
+                  },
+                  "dungeoneering": {
+                    "type": "number"
+                  }
+                },
+                "required": ["combat", "dungeoneering"]
+              }
+            },
+            "required": ["skills"]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "image_url",
+          "level_required",
+          "difficulty",
+          "length",
+          "cost",
+          "shards",
+          "completion_requirement",
+          "location",
+          "loot",
+          "experience"
+        ]
+      }
+    },
+    "endpoint_updates_at": {
+      "type": "string"
+    }
+  },
+  "required": ["dungeons", "endpoint_updates_at"]
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "history_data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "average_price": {
+            "type": "number"
+          },
+          "total_sold": {
+            "type": "number"
+          }
+        },
+        "required": ["date", "average_price", "total_sold"]
+      }
+    },
+    "latest_sold": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "type": "object",
+            "properties": {
+              "hashed_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "image_url": {
+                "type": "string"
+              }
+            },
+            "required": ["hashed_id", "name", "image_url"]
+          },
+          "tier": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "price_per_item": {
+            "type": "number"
+          },
+          "total_price": {
+            "type": "number"
+          },
+          "sold_at": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "item",
+          "tier",
+          "quantity",
+          "price_per_item",
+          "total_price",
+          "sold_at"
+        ]
+      }
+    },
+    "type": {
+      "type": "string"
+    },
+    "endpoint_updates_at": {
+      "type": "string"
+    }
+  },
+  "required": ["history_data", "latest_sold", "type", "endpoint_updates_at"]
+}

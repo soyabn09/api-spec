@@ -1,0 +1,288 @@
+{
+  "history_data": [
+    {
+      "date": "2025-08-11T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 140333
+    },
+    {
+      "date": "2025-08-12T00:00:00+00:00",
+      "average_price": 48,
+      "total_sold": 283065
+    },
+    {
+      "date": "2025-08-13T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 157146
+    },
+    {
+      "date": "2025-08-14T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 250636
+    },
+    {
+      "date": "2025-08-15T00:00:00+00:00",
+      "average_price": 23,
+      "total_sold": 329894
+    },
+    {
+      "date": "2025-08-16T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 156342
+    },
+    {
+      "date": "2025-08-17T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 148162
+    },
+    {
+      "date": "2025-08-18T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 136863
+    },
+    {
+      "date": "2025-08-19T00:00:00+00:00",
+      "average_price": 1135,
+      "total_sold": 131212
+    },
+    {
+      "date": "2025-08-20T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 200929
+    },
+    {
+      "date": "2025-08-21T00:00:00+00:00",
+      "average_price": 20,
+      "total_sold": 320890
+    },
+    {
+      "date": "2025-08-22T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 191715
+    },
+    {
+      "date": "2025-08-23T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 490055
+    },
+    {
+      "date": "2025-08-24T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 171335
+    },
+    {
+      "date": "2025-08-25T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 68808
+    },
+    {
+      "date": "2025-08-26T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 158795
+    },
+    {
+      "date": "2025-08-27T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 249623
+    },
+    {
+      "date": "2025-08-28T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 258910
+    },
+    {
+      "date": "2025-08-29T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 675823
+    },
+    {
+      "date": "2025-08-30T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 1078635
+    },
+    {
+      "date": "2025-08-31T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 529295
+    },
+    {
+      "date": "2025-09-01T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 237847
+    },
+    {
+      "date": "2025-09-02T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 246297
+    },
+    {
+      "date": "2025-09-03T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 198567
+    },
+    {
+      "date": "2025-09-04T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 441831
+    },
+    {
+      "date": "2025-09-05T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 260064
+    },
+    {
+      "date": "2025-09-06T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 181446
+    },
+    {
+      "date": "2025-09-07T00:00:00+00:00",
+      "average_price": 965,
+      "total_sold": 327920
+    },
+    {
+      "date": "2025-09-08T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 331534
+    },
+    {
+      "date": "2025-09-09T00:00:00+00:00",
+      "average_price": 3,
+      "total_sold": 177649
+    }
+  ],
+  "latest_sold": [
+    {
+      "id": 808808,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 1000,
+      "price_per_item": 3,
+      "total_price": 3000,
+      "sold_at": "2025-09-09T13:49:20+00:00"
+    },
+    {
+      "id": 808807,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 1000,
+      "price_per_item": 4,
+      "total_price": 4000,
+      "sold_at": "2025-09-09T13:49:17+00:00"
+    },
+    {
+      "id": 808806,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 1000,
+      "price_per_item": 4,
+      "total_price": 4000,
+      "sold_at": "2025-09-09T13:48:40+00:00"
+    },
+    {
+      "id": 808804,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 1,
+      "price_per_item": 4,
+      "total_price": 4,
+      "sold_at": "2025-09-09T13:44:58+00:00"
+    },
+    {
+      "id": 808799,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 1977,
+      "price_per_item": 4,
+      "total_price": 7908,
+      "sold_at": "2025-09-09T13:22:27+00:00"
+    },
+    {
+      "id": 808800,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 2023,
+      "price_per_item": 4,
+      "total_price": 8092,
+      "sold_at": "2025-09-09T13:22:27+00:00"
+    },
+    {
+      "id": 808797,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 523,
+      "price_per_item": 4,
+      "total_price": 2092,
+      "sold_at": "2025-09-09T13:18:35+00:00"
+    },
+    {
+      "id": 808789,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 1000,
+      "price_per_item": 4,
+      "total_price": 4000,
+      "sold_at": "2025-09-09T12:45:25+00:00"
+    },
+    {
+      "id": 808788,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 96077,
+      "price_per_item": 4,
+      "total_price": 384308,
+      "sold_at": "2025-09-09T12:45:25+00:00"
+    },
+    {
+      "id": 808786,
+      "item": {
+        "hashed_id": "7eA59WrBQRXJYzb62qKv",
+        "name": "Coal Ore",
+        "image_url": "https://cdn.idle-mmo.com/cdn-cgi/image//uploaded/skins/8tpdC3JzngzulwN5Sd5L6l711jyGO6-metaY29hbC5wbmc=-.png"
+      },
+      "tier": 1,
+      "quantity": 355,
+      "price_per_item": 4,
+      "total_price": 1420,
+      "sold_at": "2025-09-09T12:45:16+00:00"
+    }
+  ],
+  "type": "orders",
+  "endpoint_updates_at": "2025-09-09T14:42:57+00:00"
+}

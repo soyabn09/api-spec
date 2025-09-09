@@ -1,0 +1,352 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hashed_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "quality": {
+            "type": "string"
+          },
+          "vendor_price": {
+            "type": "number"
+          },
+          "is_tradeable": {
+            "type": "boolean"
+          },
+          "max_tier": {
+            "type": "number"
+          },
+          "requirements": {
+            "type": "object",
+            "properties": {
+              "combat": {
+                "type": "number"
+              },
+              "strength": {
+                "type": "number"
+              },
+              "defence": {
+                "type": "number"
+              },
+              "mining": {
+                "type": "number"
+              },
+              "fishing": {
+                "type": "number"
+              },
+              "woodcutting": {
+                "type": "number"
+              },
+              "dexterity": {
+                "type": "number"
+              }
+            },
+            "required": []
+          },
+          "stats": {
+            "type": "object",
+            "properties": {
+              "agility": {
+                "type": "number"
+              },
+              "accuracy": {
+                "type": "number"
+              },
+              "attack_power": {
+                "type": "number"
+              },
+              "critical_damage": {
+                "type": "number"
+              },
+              "critical_chance": {
+                "type": "number"
+              },
+              "protection": {
+                "type": "number"
+              },
+              "movement_speed": {
+                "type": "number"
+              }
+            },
+            "required": []
+          },
+          "effects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "number"
+                },
+                "target": {
+                  "type": "string"
+                },
+                "attribute": {
+                  "type": "string"
+                },
+                "value_type": {
+                  "type": "string"
+                }
+              },
+              "required": ["value", "target", "attribute", "value_type"]
+            }
+          },
+          "tier_modifiers": {
+            "type": "object",
+            "properties": {
+              "agility": {
+                "type": "number"
+              },
+              "accuracy": {
+                "type": "number"
+              },
+              "attack_power": {
+                "type": "number"
+              },
+              "critical_damage": {
+                "type": "number"
+              },
+              "protection": {
+                "type": "number"
+              }
+            },
+            "required": []
+          },
+          "upgrade_requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "item_id": {
+                  "type": "number"
+                },
+                "quantity": {
+                  "type": "number"
+                }
+              },
+              "required": ["item_id", "quantity"]
+            }
+          },
+          "health_restore": {
+            "type": "number"
+          },
+          "hunger_restore": {
+            "type": "number"
+          },
+          "where_to_find": {
+            "type": "object",
+            "properties": {
+              "world_bosses": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["id", "name"]
+                }
+              },
+              "dungeons": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["id", "name"]
+                }
+              },
+              "enemies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "level": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["id", "name", "level"]
+                }
+              }
+            },
+            "required": []
+          },
+          "pet": {
+            "type": "object",
+            "properties": {
+              "hashed_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {},
+              "image_url": {
+                "type": "string"
+              }
+            },
+            "required": ["hashed_id", "name", "description", "image_url"]
+          },
+          "recipe": {
+            "type": "object",
+            "properties": {
+              "skill": {
+                "type": "string"
+              },
+              "level_required": {
+                "type": "number"
+              },
+              "max_uses": {
+                "type": "number"
+              },
+              "experience": {
+                "type": "object",
+                "properties": {
+                  "stats": {
+                    "type": "object",
+                    "properties": {
+                      "speed": {
+                        "type": "number"
+                      },
+                      "strength": {
+                        "type": "number"
+                      }
+                    },
+                    "required": []
+                  },
+                  "skills": {
+                    "type": "object",
+                    "properties": {
+                      "alchemy": {
+                        "type": "number"
+                      },
+                      "forge": {
+                        "type": "number"
+                      }
+                    },
+                    "required": []
+                  }
+                },
+                "required": ["stats", "skills"]
+              },
+              "materials": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "hashed_item_id": {
+                      "type": "string"
+                    },
+                    "item_name": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["hashed_item_id", "item_name", "quantity"]
+                }
+              },
+              "result": {
+                "type": "object",
+                "properties": {
+                  "hashed_item_id": {
+                    "type": "string"
+                  },
+                  "item_name": {
+                    "type": "string"
+                  }
+                },
+                "required": ["hashed_item_id", "item_name"]
+              }
+            },
+            "required": [
+              "skill",
+              "level_required",
+              "experience",
+              "materials",
+              "result"
+            ]
+          }
+        },
+        "required": [
+          "hashed_id",
+          "name",
+          "image_url",
+          "type",
+          "quality",
+          "vendor_price",
+          "is_tradeable",
+          "max_tier"
+        ]
+      }
+    },
+    "pagination": {
+      "type": "object",
+      "properties": {
+        "current_page": {
+          "type": "number"
+        },
+        "last_page": {
+          "type": "number"
+        },
+        "per_page": {
+          "type": "number"
+        },
+        "total": {
+          "type": "number"
+        },
+        "from": {
+          "type": "number"
+        },
+        "to": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "current_page",
+        "last_page",
+        "per_page",
+        "total",
+        "from",
+        "to"
+      ]
+    }
+  },
+  "required": ["items", "pagination"]
+}
