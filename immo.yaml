@@ -4,7 +4,7 @@ info:
   description: An API created using the official IdleMMO API
   license:
     name: MIT
-  version: 1.0.0
+  version: 1.0.1
 servers:
   - url: https://immo.soyab.uk
 tags:
