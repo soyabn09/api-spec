@@ -286,7 +286,8 @@ components:
         loot:
           type: array
           items: { $ref: "#/components/schemas/LootDrop" }
-        status: { type: string, enum: [READY_FOR_LOBBY, IN_PROGRESS, RESPAWNING] }
+        status:
+          { type: string, enum: [READY_FOR_LOBBY, IN_PROGRESS, RESPAWNING] }
         battle_starts_at: { type: string }
         battle_ends_at: { type: string }
     Item:
@@ -561,8 +562,9 @@ components:
         endpoint_updates_at: { type: string }
     Items:
       type: object
-      required: [items, pagination]
+      required: [date, items, pagination]
       properties:
+        date: { type: string }
         items:
           type: array
           items: { $ref: "#/components/schemas/Item" }
